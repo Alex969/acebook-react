@@ -1,30 +1,26 @@
 import React from 'react'
-import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
+//import ListItem from '@mui/material/ListItem';
+//import Divider from '@mui/material/Divider';
+//import ListItemText from '@mui/material/ListItemText';
+import Box from '@mui/material/Box';
+//import Typography from '@mui/material/Typography';
 
 const Post = (post) => {
+  console.log(post)
   return (
-    <List>
-      <><ListItem alignItems="flex-start">
-      <ListItemText
-        primary="Username"
-        secondary={<React.Fragment>
-          <Typography
-            sx={{ display: 'inline' }}
-            component="span"
-            variant="body2"
-            color="text.primary"
-          >
-            `${post.content}`
-            {console.log(post.content)}
-          </Typography>
-        </React.Fragment>} />
-    </ListItem><Divider variant="inset" component="li" /></>
-    </List>
+      <><Box
+        component="span"
+        sx={{
+          display: 'block',
+          p: 1,
+          m: 1,
+          bgcolor: 'background.paper',
+        }}
+      >
+        {post.post.content}
+      </Box></>
   )
 }
+
 
 export default Post

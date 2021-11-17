@@ -1,10 +1,12 @@
 import Post from './Post'
-import List from '@mui/material/List';
+import CreatePost from './CreatePost';
 import { useState, useEffect} from 'react';
+
 
 const Feed = () => {
 
   const [posts, setPosts] = useState([])
+
 
   //Fetch Posts
   const fetchPosts = async () => {
@@ -17,26 +19,42 @@ const Feed = () => {
     const getPosts = async () => {
       const postsFromServer = await fetchPosts()
       setPosts(postsFromServer)
-      const post = postsFromServer[0]
-      console.log(post.content)
     }
 
     getPosts()
   }, [])
 
+  // Creates Post
+
+  const createPost = async (post) => {
+    const res = await fetch('http://localhost:5000/posts', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(post),
+    })
+
+    const data = await res.json()
+
+    setPosts([...posts, data])
+  }
+
   return (
+    <>
     <div className="container">
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <CreatePost onCreate={createPost} />
+    </div>
+    <div className="container">
       {posts.map((post, index) => {
-        console.log(post)
         return( 
           <div key={index}>
             <Post post = {post}/>
           </div>
         )
       })}
-    </List>
     </div>
+    </>
   )
 }
 
