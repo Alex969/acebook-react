@@ -18,10 +18,9 @@ const Post = (post) => {
             variant="body2"
             color="text.primary"
           >
-            A person's name
+            `${post.content}`
+            {console.log(post.content)}
           </Typography>
-          {post.body}
-          {console.log(post.body)}
         </React.Fragment>} />
     </ListItem><Divider variant="inset" component="li" /></>
     </List>
