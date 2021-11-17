@@ -43,10 +43,10 @@ const Feed = () => {
   return (
     <>
     <div className="container">
-      <CreatePost onCreate={createPost} />
+      <CreatePost onCreate={createPost } />
     </div>
     <div className="container">
-      {posts.map((post, index) => {
+      {posts.map((post, index) => { //renders 1 post component per json blob fetched
         return( 
           <div key={index}>
             <Post post = {post}/>

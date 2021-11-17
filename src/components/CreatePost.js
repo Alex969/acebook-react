@@ -15,11 +15,11 @@ const CreatePost = ({ onCreate }) => {
         <Button variant="contained" type="submit"
             onClick={() => {
               if (!content) {
-                alert('Please add some content')
+                alert('Please add some content') //raises error if you try and submit without entering text
                 return
               }
               onCreate({ content })
-              setText("")
+              setText("") //resets text
               }
             }
           >
