@@ -1,6 +1,7 @@
 import './Register.css';
 import React, { useState, useRef } from 'react';
 import "./Modal.css";
+import {useNavigate} from 'react-router-dom';
 
 function Register(){
   const [modal, setModal] = useState(false);
@@ -8,13 +9,20 @@ function Register(){
   const lastNameRef = useRef();
   const emailSignUpRef = useRef();
   const passwordSignUpRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
-   const toggleModal = () => {
+  const navigate = useNavigate();
+ 
+  const toggleModal = () => {
     setModal(!modal)
   }
 
   const handleLogIn = (event) => {
-    const data = { "session": {"email": "j@j.com", "password": "banana" }};
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
+
+    const data = { "session": {"email": email, "password": password }};
 
     fetch('https://acebook-api.herokuapp.com/login', {
     method: 'POST',
@@ -26,6 +34,7 @@ function Register(){
     }).then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      navigate('/posts')
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -33,10 +42,8 @@ function Register(){
 
     // alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
-  }
-  
+  } 
     const handleSignUp = (event) => {
-      // const data = {"user": {"first_name": "Curl", "last_name": "Request", "email": "curl@example.com", "password": "curl"}};
       const firstName = firstNameRef.current.value
       const lastName = lastNameRef.current.value
       const emailSignUp = emailSignUpRef.current.value
@@ -54,7 +61,7 @@ function Register(){
       }).then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        // console.log('Success ', firstNameRef, lastNameRef, emailSignUpRef, passwordSignUpRef)
+        navigate('/posts')
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -78,10 +85,10 @@ function Register(){
       <div className="LogInContainer">
         <div className="logindetail">
           <form onSubmit={handleLogIn}>
-            <input type="email" placeholder="Email address"/>
+            <input type="email" ref={emailRef} placeholder="Email address"/>
             <br></br>
-            <input type="password" placeholder="Password"/>
-            <input className="btn" type="submit" value="Log in" />
+            <input type="password" ref={passwordRef} placeholder="Password"/>
+            <input className="btn" type="submit" value="Log in"/>
           </form>
         </div>
         <div className="lineBreak">
@@ -116,7 +123,6 @@ function Register(){
                   You may receive SMS notifications from us and can opt out at any time.
                 </div>
                 <input className="btn-sign-up" type="submit" value="Sign Up"/>
-
               </form>
               <button
               className="close-modal"
