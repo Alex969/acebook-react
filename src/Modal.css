@@ -1,0 +1,124 @@
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(240,242,245,0.6);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 3px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  max-width: 503px;
+  min-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+  border: 0;
+  font-size: 32px;
+  color: gray;
+  background-color: white;
+}
+.sign-up {
+  font-family: "Inter", sans-serif;
+  color: #cd7070;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  margin: 10px 8px;
+
+}
+.modalLineBreak {
+  align-items: center;
+  border-bottom: 1px solid #dadde1;
+  display: flex;
+  margin: 20px 0px;
+  text-align: center;
+}
+.itWontTakeLong {
+  font-size: 15px;
+  font-weight: 400;
+  color: #606770;
+  margin: 10px;
+}
+.input {
+  font-size: 15px;
+  line-height: 16px;
+}
+input[type=firstName]{
+  background: #f5f6f7;
+  border-radius: 5px;
+  padding: 6px;
+  border: 1px solid #ccd0d5;
+  margin: 1px 8px;
+}
+input[type=lastName]{
+  background: #f5f6f7;
+  border-radius: 5px;
+  padding: 6px;
+  border: 1px solid #ccd0d5;
+  margin: 3px 3px;
+}
+input[type=emailSignUp]{
+  box-sizing: border-box;
+  width: 473px;
+  height: 40px;
+  background-color: #f5f6f7;
+  margin: 12px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccd0d5;
+  padding: 6px;
+}
+input[type=passwordSignUp]{
+  box-sizing: border-box;
+  width: 473px;
+  height: 40px;
+  background-color: #f5f6f7;
+  margin: 1px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccd0d5;
+  padding: 6px;
+}
+
+.btn-sign-up {
+  color: white;
+  background-color: #9DF469;
+  border: none;
+  padding: 15px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin: 10px 136px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 191px;
+}
+
+.disclaimer {
+  display: inline-block;
+  color: #777;
+  font-size: 11px;
+  margin: 20px;
+  position: relative;
+  text-align: left;
+}
