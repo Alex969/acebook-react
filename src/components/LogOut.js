@@ -22,8 +22,6 @@ const LogOut = () => {
           border: 0,
           m: 1,
           justifyContent: 'center',
-          //mt: 10,
-          //mb: 8,
           mx: 'auto',
           borderRadius: 4,
           color: 'white',
