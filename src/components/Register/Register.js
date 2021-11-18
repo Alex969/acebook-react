@@ -1,9 +1,13 @@
 import './Register.css';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import "./Modal.css";
 
 function Register(){
   const [modal, setModal] = useState(false);
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const emailSignUpRef = useRef();
+  const passwordSignUpRef = useRef();
 
    const toggleModal = () => {
     setModal(!modal)
@@ -14,6 +18,7 @@ function Register(){
 
     fetch('https://acebook-api.herokuapp.com/login', {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -31,10 +36,17 @@ function Register(){
   }
   
     const handleSignUp = (event) => {
-      const data = {"user": {"first_name": "Curl", "last_name": "Request", "email": "curl@example.com", "password": "curl"}};
-  
+      // const data = {"user": {"first_name": "Curl", "last_name": "Request", "email": "curl@example.com", "password": "curl"}};
+      const firstName = firstNameRef.current.value
+      const lastName = lastNameRef.current.value
+      const emailSignUp = emailSignUpRef.current.value
+      const passwordSignUp = passwordSignUpRef.current.value
+
+      const data = {"user": {"first_name": firstName, "last_name": lastName, "email": emailSignUp, "password": passwordSignUp}};
+
       fetch('https://acebook-api.herokuapp.com/users', {
       method: 'POST',
+      credentials: 'include', 
       headers: {
         'Content-Type': 'application/json',
       },
@@ -42,6 +54,7 @@ function Register(){
       }).then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        // console.log('Success ', firstNameRef, lastNameRef, emailSignUpRef, passwordSignUpRef)
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -91,10 +104,10 @@ function Register(){
               </div>
               <form onSubmit={handleSignUp}>
                 <div className="input">
-                  <input type="firstName" placeholder="First Name"/>
-                  <input type="lastName" placeholder="Last Name"/>
-                  <input type="emailSignUp" placeholder="Email address"/>
-                  <input type="passwordSignUp" placeholder="Create a new password"/>
+                  <input type="firstName" ref={firstNameRef} placeholder="First Name"/>
+                  <input type="lastName" ref={lastNameRef} placeholder="Last Name"/>
+                  <input type="emailSignUp" ref={emailSignUpRef} placeholder="Email address"/>
+                  <input type="passwordSignUp" ref={passwordSignUpRef} placeholder="Create a new password"/>
                 </div>
                 <div className="disclaimer">
                   By clicking Sign Up, you agree to our Terms. 
