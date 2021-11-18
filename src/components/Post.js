@@ -5,12 +5,11 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const Post = (post) => {
-  console.log(post)
+const Post = (response) => {
   return (
     <div className="container">
       <Typography variant="h5" gutterBottom component="div">
-        {post.post.user.first_name} {post.post.user.last_name}
+        {response.post.user.first_name} {response.post.user.last_name}
       </Typography>
       <Box component="span"
         sx={{
@@ -21,7 +20,7 @@ const Post = (post) => {
           border: 1,
           borderColor: 'grey.500'
         }}>
-        {post.post.content}
+        {response.post.content}
       </Box>
       </div>
   )
