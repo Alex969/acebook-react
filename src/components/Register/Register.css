@@ -41,7 +41,7 @@ input:focus::placeholder {
 }
 input[type=email]{
   box-sizing: border-box;
-  width: 400px;
+  width: 391px;
   height: 64px;
   background-color: #ffffff;
   margin: 0 8px;
@@ -50,7 +50,7 @@ input[type=email]{
 }
 input[type=password]{
   box-sizing: border-box;
-  width: 400px;
+  width: 391px;
   height: 64px;
   background-color: #ffffff;
   margin: 8px 8px;
@@ -72,6 +72,7 @@ input::placeholder{
   border-radius: 6px;
   color: white;
   font-weight: 700;
+  width: 391px;
 }
 .btns{
   color: white;
