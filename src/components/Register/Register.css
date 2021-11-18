@@ -35,6 +35,7 @@ input{
   font-size: 1.3rem;
   color: black;
   font-weight: 500;
+  padding: 20px;
 }
 input:focus::placeholder {
   color: transparent;
@@ -59,7 +60,6 @@ input[type=password]{
 }
 input::placeholder{
   font-size: 1.3rem;
-  padding: 12px;
 }
 .btn{
   display: flex;
