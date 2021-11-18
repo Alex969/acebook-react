@@ -1,0 +1,92 @@
+body{
+  font: 1.6rem helvetica;
+  box-sizing: border-box;
+  background-color: #F0F2F5;
+  margin: 10%;
+}
+.Login{
+  width: 100%;
+  height:  40rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.acebooktext{
+  font-size: 4rem;
+  color: #E2BCFB;
+  font-weight: 700;
+}
+.title{
+  font-size: 2rem;
+  color: black;
+  font-weight: 500;
+}
+.LogInContainer{
+  border: white .3rem solid;
+  background-color: white;
+  height: 23rem;
+  width: 26rem ;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  border-radius: 8px;
+  
+  padding-top: 10px;
+}
+input{
+  font-size: 1.3rem;
+  color: black;
+  font-weight: 500;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+input[type=email]{
+  box-sizing: border-box;
+  width: 400px;
+  height: 64px;
+  background-color: #ffffff;
+  margin: 0 8px;
+  border-radius: 6px;
+  border: 1px solid #dadde1;
+}
+input[type=password]{
+  box-sizing: border-box;
+  width: 400px;
+  height: 64px;
+  background-color: #ffffff;
+  margin: 8px 8px;
+  border-radius: 6px;
+  border: 1px solid #dadde1;
+}
+input::placeholder{
+  font-size: 1.3rem;
+  padding: 12px;
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+  background-color: #E2BCFB;
+  border: none;
+  padding: 15px 32px;
+  justify-content: center;
+  margin: 10px 8px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 700;
+}
+.btns{
+  color: white;
+  background-color: #9DF469;
+  border: none;
+  padding: 15px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin: -15px 100px;
+}
+.lineBreak{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dadde1;
+  margin: 1px 16px;
+  text-align: center;
+}

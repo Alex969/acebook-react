@@ -8,7 +8,7 @@ const Feed = () => {
 
   //Fetch Posts
   const fetchPosts = async () => {
-    const res = await fetch('http://localhost:5000/posts')
+    const res = await fetch('https://acebook-api.herokuapp.com/posts')
     const data = await res.json()
     return data
   }
