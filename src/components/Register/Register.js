@@ -9,6 +9,48 @@ function Register(){
     setModal(!modal)
   }
 
+  // const constructor = (props) => {
+  //   super(props);
+  //   this.state = {value: ''};
+
+  //   this.handleChange = this.handleChange.bind(this);
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  // }
+
+  // const handleChange = (event) => {
+  //   this.setState({value: event.target.value});
+  // }
+
+  const handleSubmit = (event) => {
+    const data = { "session": {"email": "j@j.com", "password": "banana" }};
+
+    fetch('https://acebook-api.herokuapp.com/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+    }).then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
+    // alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  /* Signup
+  curl -X POST -H "Content-Type: application/json" \
+    -d '{"user": {"first_name": "Curl", "last_name": "Request", "email": "curl@example.com", "password": "curl"} }' \
+    https://acebook-api.herokuapp.com/users
+
+    succesful: return a user object as json
+  */
+
+
   return(
     <div className="Login">
       <div className="acebook">
@@ -22,14 +64,12 @@ function Register(){
       </div>
       <div className="LogInContainer">
         <div className="logindetail">
-          <form>
+          <form onSubmit={handleSubmit}>
             <input type="email" placeholder="Email address"/>
             <br></br>
-            <input type="password" placeholder="Password"/> 
+            <input type="password" placeholder="Password"/>
+            <input className="btn" type="submit" value="Log in" />
           </form>
-        </div>
-        <div className="btn">
-          Log In
         </div>
         <div className="lineBreak">
         </div>
