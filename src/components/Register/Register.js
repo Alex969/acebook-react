@@ -21,7 +21,7 @@ function Register(){
   //   this.setState({value: event.target.value});
   // }
 
-  const handleSubmit = (event) => {
+  const handleLogIn = (event) => {
     const data = { "session": {"email": "j@j.com", "password": "banana" }};
 
     fetch('https://acebook-api.herokuapp.com/login', {
@@ -49,7 +49,27 @@ function Register(){
 
     succesful: return a user object as json
   */
-
+  
+    const handleSignUp = (event) => {
+      const data = {"user": {"first_name": "Curl", "last_name": "Request", "email": "curl@example.com", "password": "curl"}};
+  
+      fetch('https://acebook-api.herokuapp.com/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+      }).then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  
+      // alert('A name was submitted: ' + this.state.value);
+      event.preventDefault();
+    }
 
   return(
     <div className="Login">
@@ -64,7 +84,7 @@ function Register(){
       </div>
       <div className="LogInContainer">
         <div className="logindetail">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleLogIn}>
             <input type="email" placeholder="Email address"/>
             <br></br>
             <input type="password" placeholder="Password"/>
@@ -89,25 +109,26 @@ function Register(){
               <div className="itWontTakeLong">It won't take long!</div>
               <div className="modalLineBreak">
               </div>
-              <div className="input">
-              <input type="firstName" placeholder="First Name"/>
-              <input type="lastName" placeholder="Last Name"/>
-              <input type="emailSignUp" placeholder="Email address"/>
-              <input type="passwordSignUp" placeholder="Create a new password"/>
-              </div>
-              <div className="disclaimer">
-              By clicking Sign Up, you agree to our Terms. 
-              Learn how we collect, use and share your data in our Data Policy 
-              and how we use cookies and similar technology in our Cookie Policy. 
-              You may receive SMS notifications from us and can opt out at any time.
-              </div>
-              <button className="btn-sign-up">
-                  Sign Up
-              </button>
-            <button
-            className="close-modal"
-            onClick={toggleModal}
-            >&#215;</button>
+              <form onSubmit={handleSignUp}>
+                <div className="input">
+                  <input type="firstName" placeholder="First Name"/>
+                  <input type="lastName" placeholder="Last Name"/>
+                  <input type="emailSignUp" placeholder="Email address"/>
+                  <input type="passwordSignUp" placeholder="Create a new password"/>
+                </div>
+                <div className="disclaimer">
+                  By clicking Sign Up, you agree to our Terms. 
+                  Learn how we collect, use and share your data in our Data Policy 
+                  and how we use cookies and similar technology in our Cookie Policy. 
+                  You may receive SMS notifications from us and can opt out at any time.
+                </div>
+                <input className="btn-sign-up" type="submit" value="Sign Up"/>
+
+              </form>
+              <button
+              className="close-modal"
+              onClick={toggleModal}
+              >&#215;</button>
             </div>
         </div>
 

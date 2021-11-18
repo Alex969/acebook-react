@@ -35,7 +35,6 @@ input{
   font-size: 1.3rem;
   color: black;
   font-weight: 500;
-  padding: 20px;
 }
 input:focus::placeholder {
   color: transparent;
@@ -48,6 +47,7 @@ input[type=email]{
   margin: 0 8px;
   border-radius: 6px;
   border: 1px solid #dadde1;
+  padding: 20px;
 }
 input[type=password]{
   box-sizing: border-box;
@@ -57,6 +57,7 @@ input[type=password]{
   margin: 8px 8px;
   border-radius: 6px;
   border: 1px solid #dadde1;
+  padding: 20px;
 }
 input::placeholder{
   font-size: 1.3rem;

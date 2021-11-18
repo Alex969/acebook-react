@@ -24,7 +24,7 @@ body.active-modal {
   padding: 3px 8px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  max-width: 600px;
+  max-width: 503px;
   min-width: 300px;
 }
 
@@ -86,6 +86,7 @@ input[type=emailSignUp]{
   margin: 12px 8px;
   border-radius: 6px;
   border: 1px solid #ccd0d5;
+  padding: 6px;
 }
 input[type=passwordSignUp]{
   box-sizing: border-box;
@@ -95,10 +96,10 @@ input[type=passwordSignUp]{
   margin: 1px 8px;
   border-radius: 6px;
   border: 1px solid #ccd0d5;
+  padding: 6px;
 }
 
 .btn-sign-up {
-  position: relative;
   color: white;
   background-color: #9DF469;
   border: none;
@@ -106,10 +107,11 @@ input[type=passwordSignUp]{
   font-size: 18px;
   font-weight: bold;
   border-radius: 6px;
-  margin: -15px 100px;
+  margin: 10px 136px;
   position: relative;
   text-align: center;
   vertical-align: middle;
+  width: 191px;
 }
 
 .disclaimer {
