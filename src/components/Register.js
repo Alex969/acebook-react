@@ -1,4 +1,5 @@
 import '../Register.css';
+import { Navigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import "../Modal.css";
 
@@ -34,6 +35,7 @@ function Register(){
     }).then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      <Navigate to="/"/>
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -63,6 +65,7 @@ function Register(){
       }).then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        <Navigate to="/"/>
       })
       .catch((error) => {
         console.error('Error:', error);

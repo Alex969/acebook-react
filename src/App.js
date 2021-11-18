@@ -1,9 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-//import CreatePost from './components/CreatePost';
-import Feed from './components/Feed';
-import About from './components/About'
-import Register from './components/Register';
+import LoginControl from './components/LoginControl';
 //import Post from './components/Post'
 
 function App() {
@@ -11,9 +8,7 @@ function App() {
       <div className="container">
         <Router>
         <Routes>
-        <Route path='/' exact element={<Register /> }/>
-        <Route path='/home' exact element={<Feed /> }/>
-        <Route path='/about' element={ <About /> } />
+        <Route path='/' exact element={<LoginControl /> }/>
         </Routes>
         </Router>
       </div>

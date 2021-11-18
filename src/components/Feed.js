@@ -47,7 +47,8 @@ const Feed = () => {
 
   return (
     <>
-    <Box sx={{bgcolor: 'grey.200'}}> <Header />
+    <Box sx={{bgcolor: 'grey.200'}}> 
+      <Header />
       <Box sx={{p:5}}>
         <div className="container">
           <CreatePost onCreate={createPost } />
