@@ -12,7 +12,7 @@ function App() {
         <Router>
         <Routes>
         <Route path='/' exact element={<Register /> }/>
-        <Route path='/posts' exact element={<Feed /> }/>
+        <Route path='/home' exact element={<Feed /> }/>
         <Route path='/about' element={ <About /> } />
         </Routes>
         </Router>

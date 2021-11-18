@@ -34,7 +34,7 @@ function Register(){
     }).then(response => response.json())
     .then(data => {
       console.log('Success:', data);
-      navigate('/posts')
+      navigate('/home')
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -61,7 +61,7 @@ function Register(){
       }).then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        navigate('/posts')
+        navigate('/home')
       })
       .catch((error) => {
         console.error('Error:', error);
