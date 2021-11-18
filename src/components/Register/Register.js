@@ -9,18 +9,6 @@ function Register(){
     setModal(!modal)
   }
 
-  // const constructor = (props) => {
-  //   super(props);
-  //   this.state = {value: ''};
-
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
-
-  // const handleChange = (event) => {
-  //   this.setState({value: event.target.value});
-  // }
-
   const handleLogIn = (event) => {
     const data = { "session": {"email": "j@j.com", "password": "banana" }};
 
@@ -41,14 +29,6 @@ function Register(){
     // alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
   }
-
-  /* Signup
-  curl -X POST -H "Content-Type: application/json" \
-    -d '{"user": {"first_name": "Curl", "last_name": "Request", "email": "curl@example.com", "password": "curl"} }' \
-    https://acebook-api.herokuapp.com/users
-
-    succesful: return a user object as json
-  */
   
     const handleSignUp = (event) => {
       const data = {"user": {"first_name": "Curl", "last_name": "Request", "email": "curl@example.com", "password": "curl"}};
