@@ -12,7 +12,7 @@ const Post = (response) => {
   return (
     <div className="container">
       <Typography variant="h5" gutterBottom component="div">
-        {response.post.user.first_name} {response.post.user.last_name} {response.post.created_at}
+        {response.post.user.first_name} {response.post.user.last_name} {timeSince(response.post.created_at)}
       </Typography>
       <Box component="span"
         sx={{
@@ -43,7 +43,8 @@ const Post = (response) => {
               <div>{response.post.comment_count} comments</div>
               <div>
                 {response.post.comments[0].user.first_name} {" "}
-                {response.post.comments[0].user.last_name}
+                {response.post.comments[0].user.last_name} {" "}
+                {timeSince(response.post.comments[0].created_at)}
               </div>
               <div>{response.post.comments[0].content}</div>
               <div>{response.post.comments[0].like_count} likes</div>

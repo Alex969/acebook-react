@@ -1,8 +1,7 @@
 // replicates twitter date formatting
 const timeSince = (dateString) => {  
-  let dateObject = Date.parse(dateString)
-  console.log(dateObject)
   const monthFormat = { month: 'short' };
+  let dateObject = new Date(Date.parse(dateString))
 
   let yearStartDate = new Date(new Date().getFullYear(), 0, 1);
   let yearStart = yearStartDate.getTime() / 1000
