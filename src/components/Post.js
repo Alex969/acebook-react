@@ -5,7 +5,8 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import timeSince from '../timeSince'
-import addLike from './addLike'
+import addLikeToPost from './addLikeToPost'
+import addLikeToComment from './addLikeToComment'
 
 const Post = (response) => {
 
@@ -26,6 +27,7 @@ const Post = (response) => {
         }}>
         {response.post.content}
       </Box>
+      <div>{addLikeToPost(response.post.id)}</div>
       {(() => {
         if (response.post.like_count == 1) {
           return (
@@ -49,13 +51,13 @@ const Post = (response) => {
               </div>
               <div>{response.post.comments[0].content}</div>
               <div>{response.post.comments[0].like_count} likes</div>
+              <div>{addLikeToComment(response.post.comments[0].id)}</div>
             </>
           )
         } else {
           return 
         }
       })()}
-      <div>{addLike(response.post.id)}</div>
     </div>
   )
 }

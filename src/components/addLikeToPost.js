@@ -1,6 +1,6 @@
-function addLike(id) {
+function addLikeToPost(id) {
 
-  const handleLike = async () => {
+  const handlePostLike = async () => {
     const res = await fetch(`https://acebook-api.herokuapp.com/posts/${id}/likes`, {
       method: 'POST',
       credentials: 'include',
@@ -11,25 +11,11 @@ function addLike(id) {
     }
 
   return (
-    <form onSubmit={handleLike}>
+    <form onSubmit={handlePostLike}>
       <button type="submit">Add like</button>
     </form>
   );
 
 }
 
-export default addLike
-
-
-
-
-
-
-
-
-
-// const fetchPosts = async () => {
-//   const res = await fetch('https://acebook-api.herokuapp.com/posts')
-//   const data = await res.json()
-//   return data
-// }
+export default addLikeToPost
