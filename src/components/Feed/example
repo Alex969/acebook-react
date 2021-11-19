@@ -1,0 +1,40 @@
+import React from "react";
+import Input from "@material-ui/core/Input";
+import InputAdornment from "@material-ui/core/InputAdornment";
+
+const App = () => {
+return (
+	<div
+	style={{
+		marginLeft: "30%",
+	}}
+	>
+	<h4>
+		How to show User Image along with
+		the input field in ReactJS?
+	</h4>
+	<Input
+		id="input-with-icon-adornment"
+		style={{
+		padding: 20,
+		}}
+		startAdornment={
+		<InputAdornment position="start">
+			<img
+			src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20200716222246/Path-219.png"
+			style={{
+				height: 50,
+				width: 50,
+				borderRadius: "50%",
+				border: "1px solid grey",
+			}}
+			/>
+		</InputAdornment>
+		}
+	/>
+	</div>
+);
+};
+
+export default App;
