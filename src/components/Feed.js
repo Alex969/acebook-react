@@ -29,6 +29,7 @@ const Feed = () => {
   const createPost = async (post) => {
     const res = await fetch('https://acebook-api.herokuapp.com/posts', {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-type': 'application/json',
       },
@@ -37,7 +38,7 @@ const Feed = () => {
 
     const data = await res.json()
 
-    setPosts([...posts, data])
+    setPosts([data, ...posts])
   }
 
   return (
