@@ -5,6 +5,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import timeSince from '../timeSince'
+import addLike from './addLike'
 
 const Post = (response) => {
 
@@ -54,6 +55,7 @@ const Post = (response) => {
           return 
         }
       })()}
+      <div>{addLike(response.post.id)}</div>
     </div>
   )
 }
