@@ -45,13 +45,27 @@ const Feed = () => {
     setPosts([data, ...posts])
   }
 
+  //checking login status
+
+  const isLoggedIn  = async () => {
+  const res = await fetch('https://acebook-api.herokuapp.com/logged_in', {
+    method: 'GET',
+    credentials: 'include'
+  })
+  const data = await res.json()
+  console.log(data.logged_in)
+  return data.logged_in
+  }
+
+
+
   return (
     <>
     <Box sx={{bgcolor: 'grey.200'}}> 
       <Header />
       <Box sx={{p:5}}>
         <div className="container">
-          <CreatePost onCreate={createPost } />
+          <CreatePost onCreate={ createPost } onLogIn={ isLoggedIn } />
         </div>
         <div className="container">
           {posts.map((post, index) => { //renders 1 post component per json blob fetched

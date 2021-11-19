@@ -1,6 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import LoginControl from './components/LoginControl';
+import Feed from './components/Feed';
+import Register from './components/Register';
 //import Post from './components/Post'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
       <div className="container">
         <Router>
         <Routes>
-        <Route path='/' exact element={<LoginControl /> }/>
+        <Route path='/' exact element={<Register /> }/>
+        <Route path='/posts' exact element={<Feed /> }/>
         </Routes>
         </Router>
       </div>

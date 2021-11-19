@@ -1,17 +1,22 @@
 import { Button } from '@mui/material';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LogOut = () => {
+  const navigate = useNavigate;
+
   const onLogOut = async () => {
     const res = await fetch('https://acebook-api.herokuapp.com/logout', {
       method: 'DELETE',
       credentials: 'include'
     })
     const data = await res.json();
-    console.log(data);
+    console.log(data.logged_out);
     console.log('You are logged out');
-    return data
+
+    return data.logged_out
   }
+
+  
 
 
   return (

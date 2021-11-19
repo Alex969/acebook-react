@@ -2,8 +2,14 @@ import { useState } from 'react'
 import { FormControl, TextField, Button} from '@mui/material';
 import '../Register.css'
 
-const CreatePost = ({ onCreate }) => {
+const CreatePost = ({ onCreate, onLogIn }) => {
   const [content, setText] = useState('')
+
+
+  //renders nothing if user is not logged in
+  if (!onLogIn()) {
+    return null;
+  }
 
   return (
     <div className="container">
