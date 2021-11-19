@@ -1,0 +1,14 @@
+.onyourmind{
+  margin-left: 350px;
+  margin-right: 350px;
+  background-color: white;
+  padding: 11px;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.1);
+}
+
+.profile-picture>img{
+  border-radius: 100%;
+  max-width: 80%;
+  margin-top: 4px;
+}
