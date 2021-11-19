@@ -24,7 +24,7 @@ body.active-modal {
   padding: 3px 8px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  max-width: 503px;
+  max-width: 472px;
   min-width: 300px;
 }
 
@@ -80,7 +80,7 @@ input[type=lastName]{
 }
 input[type=emailSignUp]{
   box-sizing: border-box;
-  width: 473px;
+  width: 431px;
   height: 40px;
   background-color: #f5f6f7;
   margin: 12px 8px;
@@ -90,7 +90,7 @@ input[type=emailSignUp]{
 }
 input[type=passwordSignUp]{
   box-sizing: border-box;
-  width: 473px;
+  width: 431px;
   height: 40px;
   background-color: #f5f6f7;
   margin: 1px 8px;

@@ -12,7 +12,7 @@ function addLikeToPost(id) {
 
   return (
     <form onSubmit={handlePostLike}>
-      <button type="submit">Add like</button>
+      <button type="submit">&#9829;</button>
     </form>
   );
 

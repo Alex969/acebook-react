@@ -12,7 +12,7 @@ function addLikeToComment(id) {
 
   return (
     <form onSubmit={handleCommentLike}>
-      <button type="submit">Add like</button>
+      <button type="submit">&#9829;</button>
     </form>
   );
 

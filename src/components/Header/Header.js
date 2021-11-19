@@ -16,8 +16,8 @@ const Header = () => {
 
           <div className="plus">
               <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">
-                  <FaCaretDown fontSize="1.3rem"/></a>
+                {/* <a href="javascript:void(0)" class="dropbtn"> */}
+                <FaCaretDown fontSize="1.3rem"/>{/*  </a> */}
                   <div class="dropdown-content">
                     <LogOut />
                   </div>
