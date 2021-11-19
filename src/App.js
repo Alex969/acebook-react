@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 //import CreatePost from './components/CreatePost';
-import Feed from './components/Feed/Feed';
+import Feed from './components/Feed/FeedTwo';
 import About from './components/About'
 //import Post from './components/Post'
 import Register from './components/Register/Register'
